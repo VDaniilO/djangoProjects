@@ -4,5 +4,5 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('', adminUsr),
+    path('expPage', adminUsr),
 ]
