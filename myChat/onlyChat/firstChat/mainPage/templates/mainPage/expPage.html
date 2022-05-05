@@ -36,10 +36,19 @@
                 <h3> {{ item.login }} </h3>
               </div>
               <div class="card-body">
-                <h5 class="card-title">Users Information</h5>
-                <p class="card-text"> Name: {{ item.firstName }} {{ item.lastName }}</p>
-                <p class="card-text"> Email: {{ item.email }}</p>
-                <a href="#" class="btn btn-primary">Go profile</a>
+                <div class="media">
+                  {% if item.photo %}
+                    <img src=" {{ item.photo.url }} " alt="" width = "250" height="200">
+                  {% else %}
+                    <img src="https://picsum.photos/id/237/250/200" alt="">
+                  {% endif %}
+                  <div class="media-body">
+                    <h5 class="card-title">Users Information</h5>
+                    <p class="card-text"> Name: {{ item.firstName }} {{ item.lastName }}</p>
+                    <p class="card-text"> Email: {{ item.email }}</p>
+                    <a href="#" class="btn btn-primary">Go profile</a>
+                  </div>
+                </div>
               </div>
               <div class="card-footer text-muted">
                 {{ item.created_at|date:"Y-m-d H:i:s" }}
