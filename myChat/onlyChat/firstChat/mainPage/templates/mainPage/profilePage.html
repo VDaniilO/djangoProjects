@@ -1,27 +1,29 @@
-{% extends 'base.html' %}
+{% extends 'profile_base.html' %}
+
 
 {% block content%}
   <div class="col-md-8">
     {% for item in usrLog%}
-      <div class="">
-        {% if item.photo %}
-          <img src=" {{ item.photo.url }} " class="img-thumbnail" alt="" width = "150" height="100">
-        {% else %}
-          <img src="https://picsum.photos/id/237/150/100" alt="">
-        {% endif %}
-      </div>
-      <div class="card w-75">
-          <div class="card-body">
-            <h5 class="card-title">Information:</h5>
-            <p class="card-text">Name: {{ item.firstName }} {{ item.lastName }}</p>
-            <p class="card-text">Email: {{ item.email }}</p>
-            <p class="card-text">Region: {{ item.region }}</p>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            {% if item.photo %}
+              <img src=" {{ item.photo.url }} " class="img-thumbnail" alt="" width = "550" height="200">
+            {% else %}
+              <img src="https://picsum.photos/id/237/150/100" alt="">
+            {% endif %}
           </div>
-          <div class="card-body">
-            <h5 class="card-title">About page:</h5>
-            <p class="card-text">Created: {{ item.created_at }}</p>
-            <p class="card-text">Active: {{ item.active }}</p>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Information:</h5>
+              <p class="card-text">Name:    {{ item.firstName }} {{ item.lastName }}</p>
+              <p class="card-text">Email:   {{ item.email }}</p>
+              <p class="card-text">Region:  {{ item.region }}</p
+              <p class="card-text">Active:  {{ item.active }}</p>
+              <p class="card-text"><small class="text-muted">Created: {{ item.created_at|date:"Y-m-d" }}</small></p>
+            </div>
           </div>
+        </div>
       </div>
     {% endfor %}
   </div>
