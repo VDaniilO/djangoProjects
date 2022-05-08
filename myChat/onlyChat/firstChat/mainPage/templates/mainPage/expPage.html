@@ -1,13 +1,9 @@
 {% extends 'base.html' %}
 
+
 {% block bar%}
-    <div class="col-mb-4">
-      <div class="list-group">
-        {% for regitem in regionInf%}
-          <a href="#" class="list-group-item list-group-item-action">{{ regitem.Region_name }}</a>
-        {% endfor %}
-      </div>
-    </div>
+{% load sitePage_tags %}
+{% show_regions %}
 {% endblock %}
 
 {% block content%}
@@ -28,7 +24,7 @@
                 <h5 class="card-title">Users Information</h5>
                 <p class="card-text"> Name: {{ item.firstName }} {{ item.lastName }}</p>
                 <p class="card-text"> Email: {{ item.email }}</p>
-                <a href="{% url 'profile' item.login %}" class="btn btn-primary">Go profile</a>
+                <a href="{{ item.get_absolute_url }}" class="btn btn-primary">Go profile</a>
               </div>
             </div>
           </div>

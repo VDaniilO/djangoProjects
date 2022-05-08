@@ -1,0 +1,9 @@
+{% load sitePage_tags %}
+<div class="col-mb-4">
+  <div class="list-group">
+    {% get_regions_name as regionInf%}
+    {% for regitem in regionInf%}
+      <a href="{{ regitem.get_absolute_url }}" class="list-group-item list-group-item-action">{{ regitem.Region_name }}</a>
+    {% endfor %}
+  </div>
+</div>
