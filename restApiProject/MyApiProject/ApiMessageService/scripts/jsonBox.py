@@ -5,7 +5,7 @@ import requests
 EXCEPT = 'АБРАКАДАБРА'
 
 url = "http://127.0.0.1:8000/api/v1/message/?format=json"
-myToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyNDI4ODYxLCJqdGkiOiI4ZTk2MzI1YmU4NDM0ODQwYTgxYzkxMGRhMzliOGM3MCIsInVzZXJfaWQiOjF9.NPsHt2PtN0u9xw_lXd3jef_kQdeaImAkGnJiEFq55wU'
+myToken = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUyNDI5OTIyLCJqdGkiOiJhOTY0NmI5N2RjZDE0OTA4OGJiNDc4MjhkNzBhYTQzMyIsInVzZXJfaWQiOjF9.OFDPomxy3q7qCMsGn2fpw5VZjzqeKsb3IS4_oerIYWQ'
 head = {'Authorization': 'JWToken {}'.format(myToken)}
 
 def get_message():
@@ -33,3 +33,4 @@ while result:
         condition_value = all_data['condition']
 
         put_req(id_usr, name_usr)
+        result = get_message()
