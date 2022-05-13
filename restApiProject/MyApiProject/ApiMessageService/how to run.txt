@@ -1,0 +1,13 @@
+Min-guide how to run
+
+At the first we need run to our local server-app:
+
+1. Moving on folder with app (cd ApiMessageService)
+2. And run manage.py (manage.py runserver) we ran our server with django api app
+
+At the second we should run our script for check message on except words:
+
+1. Moving on folder with script (cd ApiMessageService\scripts)
+2. Run jsonBox.py 
+
+It on the real time check all message and if it see except he return on the server requests about correct or incorrect record
