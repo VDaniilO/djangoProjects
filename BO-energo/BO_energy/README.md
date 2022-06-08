@@ -10,7 +10,8 @@ HOW TO RUN:
     manage.py runserver
 
 PROJECTS:
-  http://127.0.0.1:8000/square/ - calculate square equation
+  http://127.0.0.1:8000/square/ - calculate square equation,
+  
   http://127.0.0.1:8000/find_color/ - find color for number
 
 Thank you for your attention!
