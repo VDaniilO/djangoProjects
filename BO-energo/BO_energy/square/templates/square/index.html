@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Forms editor</title>
+  </head>
+  <body>
+
+    <form method="post">
+      {% csrf_token %}
+
+          <div class="value_a">
+            <label for = "{{ form.value_a.id_for_label }}"> Value a: </label>
+            {{ form.value_a }}
+          </div>
+          <div class="value_b">
+            <label for = "{{ form.value_b.id_for_label }}"> Value b: </label>
+            {{ form.value_b }}
+          </div>
+          <div class="value_c">
+            <label for = "{{ form.value_c.id_for_label }}"> Value c: </label>
+            {{ form.value_c }}
+          </div>
+
+      <button type="submit" name="button">Calculate</button>
+    </form>
+    <div class="">
+      Ответ:
+      {% for item in answer %}
+          {{ item }}
+      {% endfor %}
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
